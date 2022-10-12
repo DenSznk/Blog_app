@@ -1,0 +1,33 @@
+{% extends 'blog_application/default.html'%}
+
+{% block title %} Post  {% endblock title %}
+
+{% block content %}
+<div class="row ">
+    <div class="col-md-8 mx-auto">
+        {% for name in post.post_category.all %}
+        <h4> Post category: {{ name.category_name }}</h4>
+        {% endfor %}
+    </div>
+</div>
+
+
+<div class="row ">
+    <div class="col-md-8 mx-auto">
+        <table class="table">
+            <table class="table table-striped">
+                <tr>
+                    <th>Content</th>
+                    <th>Author</th>
+                    <th>Date</th>
+                </tr>
+                <tr>
+                    <td>{{ post.post_content}}</td>
+                    <td>{{ post.post_author}}</td>
+                    <td>{{post.post_date_added}}</td>
+                </tr>
+            </table>
+        </table>
+    </div>
+</div>
+{% endblock%}
