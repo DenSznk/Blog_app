@@ -18,8 +18,8 @@
                 </tr>
                 {% for post in page_obj %}
                 <tr>
-                    <td>{{ post.post_header }}</td>
-                    <td>{{ post.post_content}}</td>
+                    <td><a href="{% url 'posts_detail' post.pk %}">{{ post.post_header }}</a></td>
+                    <td>{{ post.post_content | truncatewords:20}}</td>
                     <td>{{ post.post_author}}</td>
                     <td>{{post.post_tag}}</td>
                     <td>{{post.post_date_added}}</td>
@@ -56,5 +56,5 @@
     </span>
     </div>
 </div>
-{% endblock%}
+{% endblock %}
 

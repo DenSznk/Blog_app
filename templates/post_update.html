@@ -1,0 +1,9 @@
+{% extends 'blog_application/default.html'%}
+
+{% block title %} Update  {% endblock title %}
+
+{% block content %}
+<h1> Update:</h1>{{post.post_header}}
+     <hr>
+{% include 'blog_application/form.html' with button='Save' %}
+{% endblock%}

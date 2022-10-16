@@ -11,7 +11,6 @@
     </div>
 </div>
 
-
 <div class="row ">
     <div class="col-md-8 mx-auto">
         <table class="table">
@@ -20,6 +19,8 @@
                     <th>Content</th>
                     <th>Author</th>
                     <th>Date</th>
+                    <th>Update</th>
+                    <th>Delete</th>
                 </tr>
                 <tr>
                     <td>{{ post.post_content}}</td>
@@ -30,4 +31,13 @@
         </table>
     </div>
 </div>
+<div class="rov mx-auto">
+    <div class="col-md-8 mx-auto">
+            <a href="{% url 'posts_list' %}" class="btn btn-primary">Back</a>
+        <a href="{% url 'posts_update' post.pk %}" class="btn btn-primary">Update</a>
+        <a href="{% url 'posts_delete' post.pk %}" class="btn btn-danger">Delete</a>
+
+
+    </div></div>
+
 {% endblock%}
